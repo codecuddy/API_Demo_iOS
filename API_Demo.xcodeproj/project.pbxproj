@@ -14,6 +14,7 @@
 		AF0B7A5E200EFD840028FB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0B7A5C200EFD840028FB3D /* LaunchScreen.storyboard */; };
 		AF0B7A69200EFD840028FB3D /* API_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B7A68200EFD840028FB3D /* API_DemoTests.swift */; };
 		AF0B7A74200EFD840028FB3D /* API_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B7A73200EFD840028FB3D /* API_DemoUITests.swift */; };
+		AFD39CB82010564C00A29B7E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD39CB72010564C00A29B7E /* background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		AF0B7A6F200EFD840028FB3D /* API_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = API_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0B7A73200EFD840028FB3D /* API_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_DemoUITests.swift; sourceTree = "<group>"; };
 		AF0B7A75200EFD840028FB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFD39CB72010564C00A29B7E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				AF0B7A53200EFD840028FB3D /* AppDelegate.swift */,
 				AF0B7A55200EFD840028FB3D /* ViewController.swift */,
 				AF0B7A57200EFD840028FB3D /* Main.storyboard */,
+				AFD39CB72010564C00A29B7E /* background.jpg */,
 				AF0B7A5A200EFD840028FB3D /* Assets.xcassets */,
 				AF0B7A5C200EFD840028FB3D /* LaunchScreen.storyboard */,
 				AF0B7A5F200EFD840028FB3D /* Info.plist */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF0B7A5E200EFD840028FB3D /* LaunchScreen.storyboard in Resources */,
+				AFD39CB82010564C00A29B7E /* background.jpg in Resources */,
 				AF0B7A5B200EFD840028FB3D /* Assets.xcassets in Resources */,
 				AF0B7A59200EFD840028FB3D /* Main.storyboard in Resources */,
 			);

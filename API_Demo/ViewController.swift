@@ -10,37 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBOutlet weak var cityTextField: UITextField!
+   
+    @IBAction func submit(_ sender: Any) {
         
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=7f86fa8088d3a888525a01077377200c")!
+        if let url = URL(string: "http://openweathermap.org/data/2.5/weather?q=" + cityTextField.text!.replacingOccurrences(of: " ", with: "%20") + "&appid=b6907d289e10d714a6e88b30761fae22") {
         
-        let task = URLSession.shared.dataTask(with: url)  {(data, response, error) in
-            
-            if error != nil {
+            let task = URLSession.shared.dataTask(with: url)  {(data, response, error) in
                 
-                print(error)
-                
-            } else {
-                
-                if let urlContent = data {
+                if error != nil {
                     
-                    do {
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                    print(error as Any)
                     
-                        print(jsonResult)
-                        print(jsonResult["name"])
+                } else {
+                    
+                    if let urlContent = data {
                         
-                        if let description = ((jsonResult["weather"] as? NSArray)?[0] as? NSDictionary)?["description"] as? String {
+                        do {
+                            let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                             
-                            print(description)
+                            print(jsonResult)
+                            print(jsonResult["name"])
+                            
+                            if let description = ((jsonResult["weather"] as? NSArray)?[0] as? NSDictionary)?["description"] as? String {
+                        
+                                DispatchQueue.main.sync {
+                                    
+                                    self.resultLabel.text = description.capitalized
+                                    
+                                }
+                                
+                            }
+                            
+                        } catch {
+                            
+                            print("JSon Processing Failed")
                             
                         }
-
-                    } catch {
-                        
-                        print("JSon Processing Failed")
                         
                     }
                     
@@ -48,9 +56,23 @@ class ViewController: UIViewController {
                 
             }
             
-        }
-        
             task.resume()
+    
+        } else {
+            
+            cityTextField.text = "Couldn't find weather for that city. Please try another city."
+            
+        }
+    
+    }
+        
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
